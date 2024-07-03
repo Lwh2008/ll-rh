@@ -6,6 +6,7 @@ ln -s /usr/lib64/libdocopt.so /usr/lib64/libdocopt.a
 tar xzvf linglong.tar.gz
 cd linglong
 mkdir build
+cd build
 cmake ..
 make -j$(nproc)
 sudo make install

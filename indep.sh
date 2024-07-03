@@ -2,7 +2,6 @@
 sudo dnf makecache
 sudo dnf up
 sudo dnf in -y qt5-qtbase-devel qt5-qtwebsockets-devel qt5-qtbase-private-devel glib2-devel ostree-devel yaml-cpp-devel systemd-devel libseccomp-devel docopt-cpp-devel python3-docopt elfutils-libelf-devel git-lfs git
-git lfs pull https://github.com/lwh2008/ll-rh
 ln -s /usr/lib64/libdocopt.so /usr/lib64/libdocopt.a
 tar xzvf linglong.tar.gz
 cd linglong

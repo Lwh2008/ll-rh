@@ -9,7 +9,7 @@ mkdir build
 cd build
 cmake ..
 make -j$(nproc)
-sudo make install
-sudo cp ../../org.deepin.linglong.PacmageManager.service /etc/systemd/system
-sudo systemctl enable --now org.deepin.linglong.PackageManager.service
+make install
+cp ../../org.deepin.linglong.PacmageManager.service /etc/systemd/system
+systemctl enable --now org.deepin.linglong.PackageManager.service
 cat /etc/os-release

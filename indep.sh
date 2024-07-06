@@ -5,7 +5,7 @@ dnf in -y cmake gcc-c++ qt5-qtbase-devel qt5-qtwebsockets-devel qt5-qtbase-priva
 ln -s /usr/lib64/libdocopt.so /usr/lib64/libdocopt.a
 tar xzvf linglong.tar.gz
 cd linglong
-
+cat ../cmake.add >> CMakeLists.txt
 mkdir build
 cd build
 dnf se libqt5

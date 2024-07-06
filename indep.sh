@@ -4,11 +4,11 @@ dnf up -y
 dnf in -y cmake gcc-c++ qt5-qtbase-devel qt5-qtwebsockets-devel qt5-qtbase-private-devel glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel systemd-devel gtest-devel libseccomp-devel elfutils-libelf-devel glibc-static libstdc++-static
 ln -s /usr/lib64/libdocopt.so /usr/lib64/libdocopt.a
 tar xzvf linglong.tar.gz
-ls
 cd linglong
-ls
+
 mkdir build
 cd build
+dnf se qt5
 cmake ..
 make -j$(nproc)
 make install

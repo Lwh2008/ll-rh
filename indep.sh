@@ -8,7 +8,7 @@ cd linglong
 
 mkdir build
 cd build
-dnf se qt5-*-devel
+dnf se libqt5
 cmake ..
 make -j$(nproc)
 make install

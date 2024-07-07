@@ -1,0 +1,21 @@
+name: CI
+on: [push]
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    container: fedora
+    steps: 
+    - name: package
+      run: |        
+        dnf up --refresh -y
+        dnf in -y gzip git git-lfs fastfetch
+    - name: clone src
+      run: |
+        git lfs clone https://github.com/lwh2008/ll-rh.git
+    - name: demo
+      run: |
+        cd ll-rh
+        bash indep.sh
+        ll-cli
+    - name: info
+      run: fastfetch

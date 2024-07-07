@@ -10,7 +10,7 @@ cd linglong
 cd build
 #dnf se libqt5
 cmake ..
-make -j$(nproc)
+make
 make install
 #cp ../../org.deepin.linglong.PacmageManager.service /etc/systemd/system
 #systemctl enable --now org.deepin.linglong.PackageManager.service

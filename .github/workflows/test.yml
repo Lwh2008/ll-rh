@@ -7,13 +7,15 @@ jobs:
     steps: 
     - name: package
       run: |        
-        dnf up --refresh -y
+        dnf makecache
         dnf in -y gzip git git-lfs fastfetch
     - name: clone src
       run: |
         git clone https://github.com/lwh2008/ll-rh.git
     - name: demo
       run: |
+        pwd
+        ls
         bash indep.sh
         ll-cli
     - name: info

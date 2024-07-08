@@ -14,8 +14,7 @@ jobs:
         git clone https://github.com/lwh2008/ll-rh.git
     - name: demo
       run: |
-        pwd
-        ls
+        cd ll-rh
         bash indep.sh
         ll-cli
     - name: info

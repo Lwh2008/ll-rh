@@ -9,7 +9,6 @@ mv 1.5.5 linglong
 cd linglong
 mkdir build
 cd build
-#dnf se libqt5
 cmake ..
 make
 make install

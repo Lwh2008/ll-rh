@@ -11,11 +11,21 @@ jobs:
         dnf in -y gzip git git-lfs fastfetch
     - name: clone src
       run: |
+        cd /root
         git clone https://github.com/lwh2008/ll-rh.git
     - name: demo
       run: |
-        cd ll-rh
+        cd /root/ll-rh
         bash indep.sh
         ll-cli
+        cd ..
+        tar cjf ll.tbz ll-rh
     - name: info
       run: fastfetch
+    - name: Upload
+      uses: actions/upload-artifact@v3
+      with:
+        name: output
+        path: /root/node.tbz
+        if-no-files-found: error
+        retention-days: 10

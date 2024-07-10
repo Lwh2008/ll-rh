@@ -16,10 +16,7 @@ jobs:
     - name: demo
       run: |
         cd /root/ll-rh
-        mkdir build
-        cd build
-        make -j$(nproc)
-        make install
+        bash indep.sh
         cd ..
         tar cjf ll.tbz ll-rh
     - name: info

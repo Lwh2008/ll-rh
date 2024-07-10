@@ -18,6 +18,8 @@ jobs:
         cd /root/ll-rh
         bash indep.sh
         ll-cli
+        ll-cli ps
+        ll-cli search deepin
         cd ..
         tar cjf ll.tbz ll-rh
     - name: info

@@ -19,7 +19,7 @@ jobs:
         bash indep.sh
         ll-cli
         ll-cli ps
-        ll-cli search *broswer
+        ll-cli repo show
         cd ..
         tar cjf ll.tbz ll-rh
     - name: info

@@ -25,6 +25,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: output
-        path: /root/node.tbz
+        path: /root/ll.tbz
         if-no-files-found: error
         retention-days: 10

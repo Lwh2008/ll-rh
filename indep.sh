@@ -9,7 +9,7 @@ git clone https://github.com/OpenAtomFoundation/linglong
 cd linglong
 mkdir build
 cd build
-cmake ..
+cmake .. -DCMAKE_BUILD_TYPE=Debug
 make
 make install
 #cp ../../org.deepin.linglong.PacmageManager.service /etc/systemd/system

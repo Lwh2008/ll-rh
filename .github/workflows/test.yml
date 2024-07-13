@@ -13,7 +13,7 @@ jobs:
       run: |
         cd /root
         git clone https://github.com/lwh2008/ll-rh.git
-    - name: demo
+    - name: demo1
       run: |
         cd /root/ll-rh
         bash indep.sh

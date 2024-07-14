@@ -19,6 +19,8 @@ jobs:
         bash indep.sh
         cd ..
         tar cjf ll.tbz ll-rh
+        ll-cli --version
+        ll-cli install org.deepin.Foundation
     - name: info
       run: fastfetch
     - name: Upload

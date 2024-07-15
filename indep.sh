@@ -9,6 +9,5 @@ mv 1.5.7 linglong
 cd linglong
 cmake --workflow --preset release
 cmake --install build-release
-dbus-send --system --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.ReloadConfig
 #cp ../../org.deepin.linglong.PacmageManager.service /etc/systemd/system
 #systemctl enable --now org.deepin.linglong.PackageManager.service

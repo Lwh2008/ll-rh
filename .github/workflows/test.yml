@@ -20,7 +20,8 @@ jobs:
         cd ..
         tar cjf ll.tbz ll-rh
         ll-cli --version
-        ll-cli install org.deepin.Foundation
+        free -h
+        sudo ll-cli install org.deepin.Foundation
     - name: info
       run: fastfetch
     - name: Upload

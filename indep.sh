@@ -7,7 +7,10 @@ ln -s /usr/lib64/libdocopt.so /usr/lib64/libdocopt.a
 git clone https://github.com/linuxdeepin/linglong --tag 1.5.7
 mv 1.5.7 linglong
 cd linglong
-cmake --workflow --preset release
-cmake --install build-release
+mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+make install
 #cp ../../org.deepin.linglong.PacmageManager.service /etc/systemd/system
 #systemctl enable --now org.deepin.linglong.PackageManager.service

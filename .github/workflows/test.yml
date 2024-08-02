@@ -14,7 +14,7 @@ jobs:
     - name: clone-src
       run: |
         cd /root
-        git clone https://github.com/linuxdeepin/linglong /root
+        git clone https://github.com/linuxdeepin/linglong
     - name: build-src
       run: |
         #mv 1.5.7 linglong

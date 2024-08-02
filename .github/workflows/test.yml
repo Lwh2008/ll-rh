@@ -5,29 +5,28 @@ jobs:
     runs-on: ubuntu-latest
     container: fedora
     steps: 
-    - name: package
+    - name: in-dep
       run: |        
-        dnf makecache
-        dnf in -y gzip git git-lfs fastfetch
-    - name: clone src
+        dnf makecache -y
+        dnf up -y
+        dnf in -y cmake gcc-c++ qt5-qtbase-devel qt5-qtwebsockets-devel qt5-qtbase-private-devel glib2-devel nlohmann-json-devel ostree-devel yaml-cpp-devel systemd-devel gtest-devel libseccomp-devel elfutils-libelf-devel glibc-static libstdc++-static docopt-cpp-devel
+        ln -s /usr/lib64/libdocopt.so /usr/lib64/libdocopt.a
+    - name: clone-src
+      run: git clone https://github.com/linuxdeepin/linglong /root
+    - name: build-src
       run: |
-        cd /root
-        git clone https://github.com/lwh2008/ll-rh.git
-    - name: demo1
-      run: |
-        cd /root/ll-rh
-        bash indep.sh
-        sudo systemctl restart dbus
-        cd ..
-        tar cjf ll.tbz ll-rh
-        ll-cli --version
-        ll-cli search deepin
+        #mv 1.5.7 linglong
+        cd linglong
+        mkdir build
+        cd build
+        cmake ..
+        make -j$(nproc)
     - name: info
       run: fastfetch
     - name: Upload
       uses: actions/upload-artifact@v3
       with:
-        name: output
-        path: /root/ll.tbz
+        name: ll-build
+        path: /root/linglong
         if-no-files-found: error
         retention-days: 10

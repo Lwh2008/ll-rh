@@ -17,6 +17,8 @@ jobs:
       run: |
         cd /root/ll-rh
         bash indep.sh
+        sudo dbus-daemon --config-file=/etc/dbus-1/system.conf --fork
+        sudo systemctl restart dbus
         cd ..
         tar cjf ll.tbz ll-rh
         ll-cli --version
